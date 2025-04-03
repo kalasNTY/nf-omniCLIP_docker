@@ -8,7 +8,7 @@ This repository contains a Nextflow pipeline for running **omniCLIP**, a computa
 ## Reference
 This pipeline is based on the original **omniCLIP** framework. Please cite the following resources:
 
-- **omniCLIP GitHub**: [philippdre/omniCLIP](https://github.com/philippdre/omniCLIP))
+- **omniCLIP GitHub**: [philippdre/omniCLIP](https://github.com/philippdre/omniCLIP)
 - **omniCLIP Publication**: [Genome Biology (2023)](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1521-2)
 - **Original ARTR-seq Data**: [Nature Methods (2023)](https://www.nature.com/articles/s41592-023-02146-w)
 
