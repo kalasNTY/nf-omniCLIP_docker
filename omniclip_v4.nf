@@ -60,7 +60,7 @@ process PARSING_BG {
     if [ ! -f $bg_f ]; then
         docker run --rm -v ~/DATA/OC:/data --user ${params.uid}:${params.gid} $params.omniclip_container \
         parsingBG --db-file /data/${db_file.name} --genome-dir /data/${genome_dir.name} \
-        ${bg_file.collect { "--bg-files /data/PTBP1_ARTR_paper/${it.name}" }.join(" ")} \
+        ${bg_file.collect { "--bg-files /data/Input/${it.name}" }.join(" ")} \
         --out-file /data/${bg_f.name}
     fi
     """
@@ -83,7 +83,7 @@ process PARSING_CLIP {
     if [ ! -f $clip_f ]; then
         docker run --rm -v ~/DATA/OC:/data --user ${params.uid}:${params.gid} $params.omniclip_container \
         parsingCLIP --db-file /data/${db_file.name} --genome-dir /data/${genome_dir.name} \
-        ${clip_file.collect { "--clip-files /data/PTBP1_ARTR_paper/${it.name}" }.join(" ")} \
+        ${clip_file.collect { "--clip-files /data/Input/${it.name}" }.join(" ")} \
         --out-file /data/${clip_f.name}
     fi
     """
