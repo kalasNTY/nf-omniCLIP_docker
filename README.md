@@ -1,7 +1,7 @@
 # omniCLIP Nextflow Pipeline (Docker Version)
 
 ## Overview
-This repository contains a Nextflow pipeline for running **omniCLIP**, a computational framework for analyzing **CLIP and ARTR-seq** NGS data interogating transcriptome-wide RNA-protein interaction. The pipeline is built to work with a **Docker container** and is optimized for running a **test dataset on chromosome 3** by default.
+This repository contains a Nextflow pipeline for running **omniCLIP**, a computational framework for analyzing **CLIP and ARTR-seq** NGS data interogating transcriptome-wide RNA-protein interaction. The pipeline is built to work with a **Docker container** and is running a **test dataset on chromosome 3** by default unless user provides custom data and parameters.
 
 > **Note:** This pipeline does **not** support multi-core processing yet (`params.nb_cores = 1`). A version using a **Singularity container** for HPC environments will be published in a separate repository (**TBA**).
 
@@ -13,7 +13,7 @@ This pipeline is based on the original **omniCLIP** framework. Please cite the f
 - **Original ARTR-seq Data**: [Nature Methods (2023)](https://www.nature.com/articles/s41592-023-02146-w)
 
 ## Container Information
-This pipeline uses a **Docker container** available on Docker Hub:
+This pipeline uses my **Docker container** available on Docker Hub:
 
 - **DockerHub Repository**: [kalasnty/omniclip_container](https://hub.docker.com/r/kalasnty/omniclip_container/tags/)
 
@@ -43,6 +43,8 @@ This pipeline uses a **Docker container** available on Docker Hub:
 ## Output
 - The default output directory is `Results/`.
 - The contents of `Results/` will be **overwritten** in subsequent runs unless manually saved.
+- The contents of Results/ need to be moved and saved to a different location prior to the next execution
+- Please manually delete all unneccessary temp files (e.g. _dat and .db) unless you want them to be re-used.
 
 ## Contribution & Development
 This pipeline was developed, debugged, and optimized by **Julian A. Zagalak**.
